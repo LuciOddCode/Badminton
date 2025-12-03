@@ -9,6 +9,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState('');
   const [error, setError] = useState(null);
+  const [mode, setMode] = useState('doubles'); // 'singles' or 'doubles'
 
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
@@ -44,9 +45,9 @@ function App() {
       setStatus('Processing video (this may take a while)...');
 
       // 2. Process
-      const processResponse = await axios.post(`http://localhost:8000/process/${filename}`);
+      const processResponse = await axios.post(`http://localhost:8000/process/${filename}?mode=${mode}`);
 
-      // Assuming the backend returns the full path, we need to convert it to a URL
+      // Assuming the backend returns the full path, we need to convert it to the URL
       // Since we mounted /outputs, we can construct the URL
       // The backend returns "output_video": "outputs\\processed_filename.mp4"
       const outputFilename = processResponse.data.output_video.split(/[\\/]/).pop();
@@ -115,6 +116,23 @@ function App() {
         {/* Right Panel: Controls & Results */}
         <div className="space-y-6">
           <div className="bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-xl">
+
+            {/* Mode Selection */}
+            <div className="mb-6 flex bg-gray-700 rounded-lg p-1">
+              <button
+                onClick={() => setMode('singles')}
+                className={`flex-1 py-2 rounded-md font-bold transition-all ${mode === 'singles' ? 'bg-shuttle text-gray-900 shadow' : 'text-gray-400 hover:text-white'}`}
+              >
+                Singles
+              </button>
+              <button
+                onClick={() => setMode('doubles')}
+                className={`flex-1 py-2 rounded-md font-bold transition-all ${mode === 'doubles' ? 'bg-shuttle text-gray-900 shadow' : 'text-gray-400 hover:text-white'}`}
+              >
+                Doubles
+              </button>
+            </div>
+
             <button
               onClick={handleUpload}
               disabled={!file || loading}

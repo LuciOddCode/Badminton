@@ -10,10 +10,11 @@ class ProcessingEngine:
         self.court_detector = CourtDetector()
         self.decision_engine = DecisionEngine()
 
-    def process_video(self, video_path, output_path=None):
+    def process_video(self, video_path, output_path=None, mode="doubles"):
         """
         Processes the video, runs detection, and generates an output video with visualizations.
         Returns a summary of results.
+        mode: "singles" or "doubles"
         """
         cap = cv2.VideoCapture(str(video_path))
         if not cap.isOpened():
@@ -46,7 +47,7 @@ class ProcessingEngine:
             
             # 2. Decide
             # Pass frame_count for trajectory tracking
-            decision_event = self.decision_engine.evaluate(shuttlecock_dets, court_dets, frame_count)
+            decision_event = self.decision_engine.evaluate(shuttlecock_dets, court_dets, frame_count, mode=mode)
             
             if decision_event:
                 active_decision = decision_event

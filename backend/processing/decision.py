@@ -15,10 +15,11 @@ class DecisionEngine:
         x1, y1, x2, y2 = box
         return x1 <= px <= x2 and y1 <= py <= y2
 
-    def evaluate(self, shuttlecock_detections, court_detections, frame_num):
+    def evaluate(self, shuttlecock_detections, court_detections, frame_num, mode="doubles"):
         """
         Evaluates the frame to determine if the shuttlecock is IN or OUT based on bounce.
         Returns a dictionary with decision details if a bounce is detected, else None.
+        mode: "singles" or "doubles"
         """
         if self.cooldown > 0:
             self.cooldown -= 1
@@ -63,7 +64,18 @@ class DecisionEngine:
             is_in = False
             if court_detections:
                 for c_box in court_detections:
-                    if self.is_inside(bounce_point, c_box[:4]):
+                    box = c_box[:4]
+                    
+                    # Adjust for Singles: Narrow the court width
+                    if mode == "singles":
+                        x1, y1, x2, y2 = box
+                        width = x2 - x1
+                        # Singles court is narrower (exclude tramlines)
+                        # Approx 1.5ft out of 20ft width on each side ~ 7.5%
+                        margin = width * 0.075
+                        box = [x1 + margin, y1, x2 - margin, y2]
+                        
+                    if self.is_inside(bounce_point, box):
                         is_in = True
                         break
             
