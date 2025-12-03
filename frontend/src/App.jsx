@@ -90,23 +90,23 @@ function App() {
           </div>
 
           {preview && !processedVideoUrl && (
-            <div className="relative bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
-              <h3 className="text-xl font-bold p-4 bg-gray-700/50">Original Video</h3>
+            <div className="relative bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700 flex justify-center bg-black">
+              <h3 className="absolute top-0 left-0 w-full text-xl font-bold p-4 bg-gradient-to-b from-gray-900/80 to-transparent z-10">Original Video</h3>
               <video
                 src={preview}
                 controls
-                className="w-full h-auto block"
+                className="w-full max-h-[60vh] object-contain block"
               />
             </div>
           )}
 
           {processedVideoUrl && (
-            <div className="relative bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
-              <h3 className="text-xl font-bold p-4 bg-gray-700/50 text-shuttle">Processed Video</h3>
+            <div className="relative bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700 flex justify-center bg-black">
+              <h3 className="absolute top-0 left-0 w-full text-xl font-bold p-4 bg-gradient-to-b from-gray-900/80 to-transparent text-shuttle z-10">Processed Video</h3>
               <video
                 src={processedVideoUrl}
                 controls
-                className="w-full h-auto block"
+                className="w-full max-h-[60vh] object-contain block"
               />
             </div>
           )}
@@ -140,18 +140,16 @@ function App() {
           </div>
 
           {results.length > 0 && (
-            <div className="bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-xl max-h-[600px] overflow-y-auto">
-              <h3 className="text-2xl font-bold mb-4 text-shuttle sticky top-0 bg-gray-800 pb-2">Match Decisions</h3>
-              <div className="space-y-3">
-                {results.map((res, idx) => (
-                  <div key={idx} className="flex justify-between items-center p-3 bg-gray-700/50 rounded-lg border border-gray-600">
-                    <span className="font-medium text-white">Frame {res.frame}</span>
-                    <span className={`font-bold px-3 py-1 rounded ${res.decision === 'IN' ? 'bg-green-600 text-white' : 'bg-red-600 text-white'}`}>
-                      {res.decision}
-                    </span>
-                  </div>
-                ))}
+            <div className="bg-gray-800 p-8 rounded-2xl border border-gray-700 shadow-xl text-center">
+              <h3 className="text-2xl font-bold mb-6 text-shuttle">Final Decision</h3>
+
+              <div className={`text-8xl font-black py-12 rounded-2xl shadow-inner ${results[results.length - 1].decision === 'IN' ? 'bg-green-600 text-white shadow-green-900/50' : 'bg-red-600 text-white shadow-red-900/50'}`}>
+                {results[results.length - 1].decision}
               </div>
+
+              <p className="mt-6 text-gray-400 text-lg">
+                Impact detected at Frame {results[results.length - 1].frame}
+              </p>
             </div>
           )}
         </div>
