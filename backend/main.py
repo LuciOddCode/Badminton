@@ -68,7 +68,7 @@ async def upload_video(file: UploadFile = File(...)):
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/process/{filename}")
-async def process_video(filename: str, mode: str = "doubles"):
+async def process_video(filename: str, mode: str = "doubles", shot_type: str = "rally"):
     video_path = UPLOAD_DIR / filename
     if not video_path.exists():
         raise HTTPException(status_code=404, detail="Video not found")
@@ -77,7 +77,7 @@ async def process_video(filename: str, mode: str = "doubles"):
     output_path = OUTPUT_DIR / output_filename
     
     try:
-        results = engine.process_video(video_path, output_path, mode=mode)
+        results = engine.process_video(video_path, output_path, mode=mode, shot_type=shot_type)
         return {
             "message": "Processing complete",
             "output_video": str(output_path),
