@@ -1,2 +1,9 @@
-.uploads
-.outputs
+/uploads
+/outputs
+__pycache__/
+*.pyc
+venv/
+*.pt
+.env
+.vscode/
+.idea/

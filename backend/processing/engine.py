@@ -2,7 +2,7 @@ import cv2
 from pathlib import Path
 from .detectors import ShuttlecockDetector, CourtDetector
 from .decision import DecisionEngine
-from .utils import draw_detections
+from .utils import draw_detections, draw_court_lines
 from .line_detector import LineDetector
 
 class ProcessingEngine:
@@ -37,6 +37,7 @@ class ProcessingEngine:
         active_decision = None
         decision_timer = 0
         lines_detected = False
+        court_dets = []
 
         while True:
             ret, frame = cap.read()
@@ -47,9 +48,20 @@ class ProcessingEngine:
             
             # 1. Detect
             shuttlecock_dets = self.shuttlecock_detector.detect(frame)
-            court_dets = self.court_detector.detect(frame)
             
-            # 2. Detect lines once when we have court detection
+            # Court Detection Optimization: Run every 5 frames
+            COURT_DETECT_INTERVAL = 5
+            if frame_count % COURT_DETECT_INTERVAL == 0 or len(court_dets) == 0:
+                 new_court_dets = self.court_detector.detect(frame)
+                 if new_court_dets:
+                     court_dets = new_court_dets
+            
+            # 2. Detect lines once when we have court detection (refresh if needed or just keep static logic?)
+            # Since camera moves, we might want to re-detect lines if court moved significantly?
+            # For now, keeping original logic which only runs ONCE. 
+            # TODO: If camera pans, lines need to be re-detected relative to new court box.
+            # Ideally, LineDetector should take the court_box every frame.
+             
             if not lines_detected and court_dets:
                 court_box = court_dets[0][:4]
                 self.line_detector.detect_lines(frame, court_box)
@@ -74,6 +86,9 @@ class ProcessingEngine:
             # 3. Visualize
             frame = draw_detections(frame, shuttlecock_dets, color=(0, 255, 255), label_prefix="Shuttle")
             frame = draw_detections(frame, court_dets, color=(0, 255, 0), label_prefix="Court")
+            
+            if lines_detected:
+                frame = draw_court_lines(frame, self.line_detector.court_lines, color=(255, 0, 0))
             
             if active_decision and decision_timer > 0:
                 # Draw impact point
