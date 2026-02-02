@@ -50,8 +50,15 @@ class DecisionEngine:
         mid_idx = len(y_coords) // 2
         mid_y = y_coords[mid_idx]
         
-        # Simple check: mid point is lower than neighbors
-        is_local_max = all(mid_y >= y for y in y_coords) and (mid_y > y_coords[0] + 2) and (mid_y > y_coords[-1] + 2)
+        # Relaxed check: mid point is the local maximum (lowest physical point)
+        # Using a small margin to filter out noise, but sensitive enough for shallow bounces
+        margin = 0.5
+        # Ensure mid point is the definitive peak among neighbors
+        is_peak = all(mid_y >= y for y in y_coords)
+        # Ensure it drops off at the ends of the window
+        is_distinct = (mid_y >= y_coords[0] + margin) and (mid_y >= y_coords[-1] + margin)
+        
+        is_local_max = is_peak and is_distinct
         
         if is_local_max:
             # Bounce detected at the middle frame of our history

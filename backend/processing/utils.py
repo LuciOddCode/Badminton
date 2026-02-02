@@ -42,37 +42,28 @@ def draw_court_lines(frame, court_lines, color=(255, 0, 0)):
     """
     Draws detected court lines on the frame.
     court_lines: Dictionary containing 'inner_sidelines', 'outer_sidelines', 'service_lines', 'baselines'
+                 stored as (m, c) tuples.
     """
     height, width = frame.shape[:2]
     
-    # Determine boundaries for drawing
-    x_min, x_max = 0, width
-    y_min, y_max = 0, height
-    
-    if court_lines.get('outer_sidelines'):
-        x_min = int(min(court_lines['outer_sidelines']))
-        x_max = int(max(court_lines['outer_sidelines']))
-        
-    if court_lines.get('baselines'):
-        y_min = int(min(court_lines['baselines']))
-        y_max = int(max(court_lines['baselines']))
-    
-    # Draw Vertical Lines (Sidelines)
-    # They span from top baseline to bottom baseline
+    # Draw Vertical Lines (Sidelines): x = my + c
     for category in ['inner_sidelines', 'outer_sidelines']:
         if court_lines.get(category):
-            for x in court_lines[category]:
-                pt1 = (int(x), y_min)
-                pt2 = (int(x), y_max)
+            for m, c in court_lines[category]:
+                # y = 0 -> x = c
+                # y = height -> x = m*height + c
+                pt1 = (int(c), 0)
+                pt2 = (int(m * height + c), height)
                 cv2.line(frame, pt1, pt2, color, 2)
                 
-    # Draw Horizontal Lines (Baselines, Service lines)
-    # They span from left outer sideline to right outer sideline
+    # Draw Horizontal Lines (Baselines, Service lines): y = mx + c
     for category in ['baselines', 'service_lines']:
         if court_lines.get(category):
-            for y in court_lines[category]:
-                pt1 = (x_min, int(y))
-                pt2 = (x_max, int(y))
+            for m, c in court_lines[category]:
+                # x = 0 -> y = c
+                # x = width -> y = m*width + c
+                pt1 = (0, int(c))
+                pt2 = (width, int(m * width + c))
                 cv2.line(frame, pt1, pt2, color, 2)
                 
     return frame

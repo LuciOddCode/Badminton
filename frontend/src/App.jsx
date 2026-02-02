@@ -10,7 +10,7 @@ function App() {
   const [status, setStatus] = useState('');
   const [error, setError] = useState(null);
   const [mode, setMode] = useState('doubles'); // 'singles' or 'doubles'
-  const [shotType, setShotType] = useState('rally'); // 'serve' or 'rally'
+
 
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
@@ -46,7 +46,7 @@ function App() {
       setStatus('Processing video (this may take a while)...');
 
       // 2. Process
-      const processResponse = await axios.post(`http://localhost:8000/process/${filename}?mode=${mode}&shot_type=${shotType}`);
+      const processResponse = await axios.post(`http://localhost:8000/process/${filename}?mode=${mode}&shot_type=rally`);
 
       // Assuming the backend returns the full path, we need to convert it to a URL
       // Since we mounted /outputs, we can construct the URL
@@ -118,35 +118,21 @@ function App() {
         <div className="space-y-6">
           <div className="bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-xl">
 
+
+
             {/* Mode Selection */}
-            <div className="mb-4 flex bg-gray-700 rounded-lg p-1">
+            <div className="mb-6 flex bg-gray-700 rounded-lg p-1">
               <button
                 onClick={() => setMode('singles')}
                 className={`flex-1 py-2 rounded-md font-bold transition-all ${mode === 'singles' ? 'bg-shuttle text-gray-900 shadow' : 'text-gray-400 hover:text-white'}`}
               >
-                Singles
+                Singles (Rally)
               </button>
               <button
                 onClick={() => setMode('doubles')}
                 className={`flex-1 py-2 rounded-md font-bold transition-all ${mode === 'doubles' ? 'bg-shuttle text-gray-900 shadow' : 'text-gray-400 hover:text-white'}`}
               >
-                Doubles
-              </button>
-            </div>
-
-            {/* Shot Type Selection */}
-            <div className="mb-6 flex bg-gray-700 rounded-lg p-1">
-              <button
-                onClick={() => setShotType('serve')}
-                className={`flex-1 py-2 rounded-md font-bold transition-all ${shotType === 'serve' ? 'bg-blue-500 text-white shadow' : 'text-gray-400 hover:text-white'}`}
-              >
-                Serve
-              </button>
-              <button
-                onClick={() => setShotType('rally')}
-                className={`flex-1 py-2 rounded-md font-bold transition-all ${shotType === 'rally' ? 'bg-blue-500 text-white shadow' : 'text-gray-400 hover:text-white'}`}
-              >
-                Rally
+                Doubles (Rally)
               </button>
             </div>
 
@@ -184,6 +170,18 @@ function App() {
 
               <p className="mt-6 text-gray-400 text-lg">
                 Impact detected at Frame {results[results.length - 1].frame}
+              </p>
+            </div>
+          )}
+
+          {status === 'Processing complete!' && results.length === 0 && (
+            <div className="bg-gray-800 p-8 rounded-2xl border border-gray-700 shadow-xl text-center">
+              <h3 className="text-2xl font-bold mb-6 text-shuttle">Final Decision</h3>
+              <div className="text-5xl font-black py-12 rounded-2xl shadow-inner bg-gray-600 text-gray-300 shadow-gray-900/50">
+                NO IMPACT
+              </div>
+              <p className="mt-6 text-gray-400 text-lg">
+                No bounce detected in the video.
               </p>
             </div>
           )}
