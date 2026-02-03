@@ -4,8 +4,13 @@ from collections import deque
 class DecisionEngine:
     def __init__(self):
         # History stores tuples of (frame_number, (x, y))
-        self.history = deque(maxlen=7)
+        # Increased buffer for smoother trajectory visualization
+        self.history = deque(maxlen=20)
         self.cooldown = 0
+    
+    def get_trajectory_history(self):
+        """Export trajectory history for animation."""
+        return list(self.history)
 
     def is_inside(self, point, box):
         """

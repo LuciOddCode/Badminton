@@ -1,0 +1,76 @@
+2026-02-03 16:48:19,901 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-03 16:48:20,011 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-03 16:50:52,158 - main - INFO - Starting processing for 43434b46-45e5-449e-a7c6-5250ea9d4b20.mp4 with mode=singles, shot_type=rally
+2026-02-03 16:50:52,158 - processing.engine - INFO - Opening video: uploads\43434b46-45e5-449e-a7c6-5250ea9d4b20.mp4
+2026-02-03 16:50:52,175 - processing.engine - INFO - Video props: 624x352 @ 29.971126082771896fps
+2026-02-03 16:50:52,198 - processing.engine - INFO - Output writer initialized: outputs\processed_43434b46-45e5-449e-a7c6-5250ea9d4b20.mp4
+2026-02-03 16:50:55,393 - processing.engine - INFO - Lines detected at frame 21
+2026-02-03 16:51:08,726 - processing.engine - INFO - Decision made at frame 93: {'decision': 'IN', 'point': (219.35040283203125, 205.62088012695312), 'frame': 78}
+2026-02-03 16:52:42,437 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: IN
+2026-02-03 16:52:45,407 - processing.engine - ERROR - Error during animation generation: module 'cv2' has no attribute 'FONT_HERSHEY_BOLD'
+Traceback (most recent call last):
+  File "E:\Badminton\backend\processing\engine.py", line 172, in process_video
+    for anim_frame in anim_generator:
+                      ^^^^^^^^^^^^^^
+  File "E:\Badminton\backend\processing\animation.py", line 320, in generate_hawkeye_replay
+    frame = self._render_verdict_with_shadow(frame, decision, width, height)
+  File "E:\Badminton\backend\processing\animation.py", line 520, in _render_verdict_with_shadow
+    font = cv2.FONT_HERSHEY_BOLD
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'cv2' has no attribute 'FONT_HERSHEY_BOLD'
+2026-02-03 16:52:45,588 - processing.engine - INFO - Video processing finished. Total frames: 519
+2026-02-03 16:52:45,588 - main - INFO - Processing complete for 43434b46-45e5-449e-a7c6-5250ea9d4b20.mp4
+2026-02-03 17:02:43,691 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-03 17:02:43,808 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-03 17:03:45,208 - main - INFO - Starting processing for ac05173c-76b3-46ca-be37-ac6c4a99dfd6.mp4 with mode=doubles, shot_type=rally
+2026-02-03 17:03:45,208 - processing.engine - INFO - Opening video: uploads\ac05173c-76b3-46ca-be37-ac6c4a99dfd6.mp4
+2026-02-03 17:03:45,225 - processing.engine - INFO - Video props: 624x352 @ 29.971126082771896fps
+2026-02-03 17:03:45,239 - processing.engine - INFO - Output writer initialized: outputs\processed_ac05173c-76b3-46ca-be37-ac6c4a99dfd6.mp4
+2026-02-03 17:03:48,462 - processing.engine - INFO - Lines detected at frame 21
+2026-02-03 17:04:01,250 - processing.engine - INFO - Decision made at frame 93: {'decision': 'IN', 'point': (219.35040283203125, 205.62088012695312), 'frame': 78}
+2026-02-03 17:05:34,789 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: IN
+2026-02-03 17:05:38,395 - processing.engine - INFO - Animation generation complete. 119 frames added.
+2026-02-03 17:05:38,766 - processing.engine - INFO - Video processing finished. Total frames: 519
+2026-02-03 17:05:38,767 - main - INFO - Processing complete for ac05173c-76b3-46ca-be37-ac6c4a99dfd6.mp4
+2026-02-03 17:10:33,859 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-03 17:10:33,974 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-03 17:10:39,123 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-03 17:10:39,228 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-03 17:20:23,474 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-03 17:20:23,578 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-03 17:26:36,758 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-03 17:26:36,866 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-03 17:27:08,621 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-03 17:27:08,728 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-03 17:29:45,354 - main - INFO - Starting processing for 4988f54e-e579-49d1-af05-00ec03c45853.mp4 with mode=singles, shot_type=rally
+2026-02-03 17:29:45,354 - processing.engine - INFO - Opening video: uploads\4988f54e-e579-49d1-af05-00ec03c45853.mp4
+2026-02-03 17:29:45,372 - processing.engine - INFO - Video props: 624x352 @ 29.971126082771896fps
+2026-02-03 17:29:45,381 - processing.engine - INFO - Output writer initialized: outputs\processed_4988f54e-e579-49d1-af05-00ec03c45853.mp4
+2026-02-03 17:29:48,628 - processing.engine - INFO - Lines detected at frame 21
+2026-02-03 17:30:00,975 - processing.engine - INFO - Decision made at frame 93: {'decision': 'IN', 'point': (219.35040283203125, 205.62088012695312), 'frame': 78}
+2026-02-03 17:31:32,267 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: IN
+2026-02-03 17:31:32,269 - processing.animation - INFO - DEBUG PROJECTION: Cam Pos: [  0.  12. -15.], Pitch: 45.0
+2026-02-03 17:31:32,269 - processing.animation - INFO - DEBUG PROJECTION: Court Vertices: [[-2.59, 0, -6.7], [2.59, 0, -6.7], [2.59, 0, 6.7], [-2.59, 0, 6.7]]
+2026-02-03 17:31:32,269 - processing.animation - INFO - DEBUG PROJECTION: Projected 2D: [(256, 231), (367, 231), (345, 88), (278, 88)]
+2026-02-03 17:31:36,802 - processing.engine - INFO - Animation generation complete. 119 frames added.
+2026-02-03 17:31:37,356 - processing.engine - INFO - Video processing finished. Total frames: 519
+2026-02-03 17:31:37,356 - main - INFO - Processing complete for 4988f54e-e579-49d1-af05-00ec03c45853.mp4
+2026-02-03 17:34:03,145 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-03 17:34:03,252 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-03 17:39:15,750 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-03 17:39:15,863 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-03 17:40:02,424 - main - INFO - Starting processing for 931796d0-135f-46be-aa1b-8152ea17baa9.mp4 with mode=singles, shot_type=rally
+2026-02-03 17:40:02,424 - processing.engine - INFO - Opening video: uploads\931796d0-135f-46be-aa1b-8152ea17baa9.mp4
+2026-02-03 17:40:02,444 - processing.engine - INFO - Video props: 624x352 @ 29.971126082771896fps
+2026-02-03 17:40:02,456 - processing.engine - INFO - Output writer initialized: outputs\processed_931796d0-135f-46be-aa1b-8152ea17baa9.mp4
+2026-02-03 17:40:05,761 - processing.engine - INFO - Lines detected at frame 21
+2026-02-03 17:40:18,240 - processing.engine - INFO - Decision made at frame 93: {'decision': 'IN', 'point': (219.35040283203125, 205.62088012695312), 'frame': 78}
+2026-02-03 17:41:49,261 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: IN
+2026-02-03 17:41:49,263 - processing.animation - INFO - DEBUG PROJECTION: Cam Pos: [  0.  12. -15.], Pitch: 45.0
+2026-02-03 17:41:49,263 - processing.animation - INFO - DEBUG PROJECTION: Court Vertices: [[-2.59, 0, -6.7], [2.59, 0, -6.7], [2.59, 0, 6.7], [-2.59, 0, 6.7]]
+2026-02-03 17:41:49,263 - processing.animation - INFO - DEBUG PROJECTION: Projected 2D: [(256, 231), (367, 231), (345, 88), (278, 88)]
+2026-02-03 17:41:54,054 - processing.engine - INFO - Animation generation complete. 119 frames added.
+2026-02-03 17:41:54,609 - processing.engine - INFO - Video processing finished. Total frames: 519
+2026-02-03 17:41:54,610 - main - INFO - Processing complete for 931796d0-135f-46be-aa1b-8152ea17baa9.mp4
+2026-02-03 17:55:35,958 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-03 17:55:36,063 - processing.engine - INFO - ProcessingEngine initialized.

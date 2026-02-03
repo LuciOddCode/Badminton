@@ -3,6 +3,18 @@ from fastapi.middleware.cors import CORSMiddleware
 import shutil
 import os
 from pathlib import Path
+import logging
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(),
+        logging.FileHandler("backend.log")
+    ]
+)
+logger = logging.getLogger(__name__)
 
 
 from processing.engine import ProcessingEngine
@@ -77,13 +89,16 @@ async def process_video(filename: str, mode: str = "doubles", shot_type: str = "
     output_path = OUTPUT_DIR / output_filename
     
     try:
+        logger.info(f"Starting processing for {filename} with mode={mode}, shot_type={shot_type}")
         results = engine.process_video(video_path, output_path, mode=mode, shot_type=shot_type)
+        logger.info(f"Processing complete for {filename}")
         return {
             "message": "Processing complete",
             "output_video": str(output_path),
             "results_summary": results
         }
     except Exception as e:
+        logger.error(f"Error processing video {filename}: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
