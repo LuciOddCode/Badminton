@@ -74,3 +74,18 @@ AttributeError: module 'cv2' has no attribute 'FONT_HERSHEY_BOLD'
 2026-02-03 17:41:54,610 - main - INFO - Processing complete for 931796d0-135f-46be-aa1b-8152ea17baa9.mp4
 2026-02-03 17:55:35,958 - processing.engine - INFO - Initializing ProcessingEngine...
 2026-02-03 17:55:36,063 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-03 17:56:19,832 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-03 17:56:19,940 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-03 17:58:32,164 - main - INFO - Starting processing for 9fd73ce1-c912-4af4-8243-83b3960aff76.mp4 with mode=singles, shot_type=rally
+2026-02-03 17:58:32,164 - processing.engine - INFO - Opening video: uploads\9fd73ce1-c912-4af4-8243-83b3960aff76.mp4
+2026-02-03 17:58:32,220 - processing.engine - INFO - Video props: 624x352 @ 29.971126082771896fps
+2026-02-03 17:58:32,229 - processing.engine - INFO - Output writer initialized: outputs\processed_9fd73ce1-c912-4af4-8243-83b3960aff76.mp4
+2026-02-03 17:58:35,227 - processing.engine - INFO - Lines detected at frame 21
+2026-02-03 17:58:47,529 - processing.engine - INFO - Decision made at frame 93: {'decision': 'IN', 'point': (219.35040283203125, 205.62088012695312), 'frame': 78}
+2026-02-03 18:00:19,030 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: IN
+2026-02-03 18:00:19,032 - processing.animation - INFO - DEBUG PROJECTION: Cam Pos: [  0.  12. -15.], Pitch: 45.0
+2026-02-03 18:00:19,033 - processing.animation - INFO - DEBUG PROJECTION: Court Vertices: [[-2.59, 0, -6.7], [2.59, 0, -6.7], [2.59, 0, 6.7], [-2.59, 0, 6.7]]
+2026-02-03 18:00:19,033 - processing.animation - INFO - DEBUG PROJECTION: Projected 2D: [(256, 231), (367, 231), (345, 88), (278, 88)]
+2026-02-03 18:00:23,780 - processing.engine - INFO - Animation generation complete. 119 frames added.
+2026-02-03 18:00:24,328 - processing.engine - INFO - Video processing finished. Total frames: 519
+2026-02-03 18:00:24,329 - main - INFO - Processing complete for 9fd73ce1-c912-4af4-8243-83b3960aff76.mp4
