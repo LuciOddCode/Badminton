@@ -132,6 +132,38 @@ class LineDetector:
             self.court_lines['outer_sidelines'] = [final_lines[0], final_lines[-1]]
             self.court_lines['inner_sidelines'] = [final_lines[0], final_lines[-1]]
 
+        # Fallback for Doubles: Check if we missed the outer lines
+        # If the detected outer lines are significantly narrower than the court box,
+        # it's likely we only found the singles lines.
+        if self.court_lines['outer_sidelines']:
+            left_line = self.court_lines['outer_sidelines'][0]
+            right_line = self.court_lines['outer_sidelines'][1]
+            
+            # Evaluate width at mid-height
+            mid_y_abs = offset_y + h/2
+            x_left = left_line[0] * mid_y_abs + left_line[1]
+            x_right = right_line[0] * mid_y_abs + right_line[1]
+            
+            detected_width = x_right - x_left
+            
+            # If detected width is < 92% of the ROI width, assume we missed the real outer lines.
+            # (Singles court is ~83% of Doubles width, so 92% is a safe threshold)
+            if detected_width < w * 0.92:
+                # Use the ROI edges as the outer lines (assuming vertical for stability)
+                # Left: x = offset_x
+                # Right: x = offset_x + w
+                # Form: x = my + c -> m=0, c=x
+                
+                # Optional: maintain the slope of the detected lines for better perspective fit?
+                # Using vertical (0) is safer if we don't trust the detected lines.
+                # But if the camera is tilted, vertical might be wrong.
+                # Let's stick to vertical for now as ROI is axis-aligned.
+                
+                new_left = (0, offset_x)
+                new_right = (0, offset_x + w)
+                
+                self.court_lines['outer_sidelines'] = [new_left, new_right]
+
     def _process_horizontal_lines(self, segments, w, h, offset_x, offset_y):
         if not segments:
             return

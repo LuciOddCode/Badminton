@@ -102,3 +102,46 @@ AttributeError: module 'cv2' has no attribute 'FONT_HERSHEY_BOLD'
 2026-02-03 23:12:00,795 - processing.engine - INFO - ProcessingEngine initialized.
 2026-02-03 23:12:31,245 - processing.engine - INFO - Initializing ProcessingEngine...
 2026-02-03 23:12:31,357 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-04 08:43:28,001 - main - INFO - Starting processing for d1c0ea97-59e7-4261-8a50-339594cf8a13.mp4 with mode=doubles, shot_type=rally
+2026-02-04 08:43:28,005 - processing.engine - INFO - Opening video: uploads\d1c0ea97-59e7-4261-8a50-339594cf8a13.mp4
+2026-02-04 08:43:28,123 - processing.engine - INFO - Video props: 624x352 @ 25.0fps
+2026-02-04 08:43:28,143 - processing.engine - INFO - Output writer initialized: outputs\processed_d1c0ea97-59e7-4261-8a50-339594cf8a13.mp4
+2026-02-04 08:43:30,039 - processing.engine - INFO - Lines detected at frame 1
+2026-02-04 08:45:06,398 - processing.engine - INFO - Video processing finished. Total frames: 407
+2026-02-04 08:45:06,401 - main - INFO - Processing complete for d1c0ea97-59e7-4261-8a50-339594cf8a13.mp4
+2026-02-04 08:49:08,332 - main - INFO - Starting processing for 8734818d-7ed9-45f6-934a-ce2c741c718d.mp4 with mode=doubles, shot_type=rally
+2026-02-04 08:49:08,332 - processing.engine - INFO - Opening video: uploads\8734818d-7ed9-45f6-934a-ce2c741c718d.mp4
+2026-02-04 08:49:08,345 - processing.engine - INFO - Video props: 416x240 @ 25.0fps
+2026-02-04 08:49:08,351 - processing.engine - INFO - Output writer initialized: outputs\processed_8734818d-7ed9-45f6-934a-ce2c741c718d.mp4
+2026-02-04 08:49:08,512 - processing.engine - INFO - Lines detected at frame 1
+2026-02-04 08:51:13,353 - processing.engine - INFO - Video processing finished. Total frames: 780
+2026-02-04 08:51:13,353 - main - INFO - Processing complete for 8734818d-7ed9-45f6-934a-ce2c741c718d.mp4
+2026-02-04 08:51:42,576 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-04 08:51:42,729 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-04 08:53:31,950 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-04 08:53:32,056 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-04 09:02:45,507 - main - INFO - Starting processing for dac3513b-0f10-4a32-bf9f-b9a3e7f9325a.mp4 with mode=doubles, shot_type=rally
+2026-02-04 09:02:45,508 - processing.engine - INFO - Opening video: uploads\dac3513b-0f10-4a32-bf9f-b9a3e7f9325a.mp4
+2026-02-04 09:02:45,758 - processing.engine - INFO - Video props: 1920x1080 @ 30.0fps
+2026-02-04 09:02:45,842 - processing.engine - INFO - Output writer initialized: outputs\processed_dac3513b-0f10-4a32-bf9f-b9a3e7f9325a.mp4
+2026-02-04 09:02:46,554 - processing.engine - INFO - Lines detected at frame 1
+2026-02-04 09:03:05,988 - processing.engine - INFO - Decision made at frame 47: {'decision': 'OUT', 'point': (920.6028442382812, 919.5535888671875), 'frame': 34}
+2026-02-04 09:08:49,339 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: OUT
+2026-02-04 09:08:49,387 - processing.animation - INFO - DEBUG PROJECTION: Cam Pos: [  0.  12. -15.], Pitch: 45.0
+2026-02-04 09:08:49,387 - processing.animation - INFO - DEBUG PROJECTION: Court Vertices: [[-3.05, 0, -6.7], [3.05, 0, -6.7], [3.05, 0, 6.7], [-3.05, 0, 6.7]]
+2026-02-04 09:08:49,388 - processing.animation - INFO - DEBUG PROJECTION: Projected 2D: [(761, 710), (1158, 710), (1079, 270), (840, 270)]
+2026-02-04 09:09:21,965 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-04 09:09:24,188 - processing.engine - INFO - Video processing finished. Total frames: 394
+2026-02-04 09:09:24,190 - main - INFO - Processing complete for dac3513b-0f10-4a32-bf9f-b9a3e7f9325a.mp4
+2026-02-04 17:04:17,132 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-04 17:04:17,397 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-04 17:05:15,890 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-04 17:05:16,020 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-04 18:25:06,582 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-04 18:25:06,691 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-04 18:26:06,079 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-04 18:26:06,184 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-04 18:31:49,870 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-04 18:31:50,016 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-04 18:31:55,101 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-04 18:31:55,222 - processing.engine - INFO - ProcessingEngine initialized.

@@ -1,0 +1,1 @@
+SUCCESS: Detected lines match court width (Ratio=1.00). Fallback applied.
