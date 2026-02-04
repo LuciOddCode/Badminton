@@ -89,3 +89,14 @@ AttributeError: module 'cv2' has no attribute 'FONT_HERSHEY_BOLD'
 2026-02-03 18:00:23,780 - processing.engine - INFO - Animation generation complete. 119 frames added.
 2026-02-03 18:00:24,328 - processing.engine - INFO - Video processing finished. Total frames: 519
 2026-02-03 18:00:24,329 - main - INFO - Processing complete for 9fd73ce1-c912-4af4-8243-83b3960aff76.mp4
+2026-02-03 22:57:18,908 - main - INFO - Starting processing for 43bd6763-0808-4d52-9ad5-098dc1b94e0b.mp4 with mode=doubles, shot_type=rally
+2026-02-03 22:57:18,913 - processing.engine - INFO - Opening video: uploads\43bd6763-0808-4d52-9ad5-098dc1b94e0b.mp4
+2026-02-03 22:57:18,966 - processing.engine - INFO - Video props: 624x352 @ 25.0fps
+2026-02-03 22:57:18,978 - processing.engine - INFO - Output writer initialized: outputs\processed_43bd6763-0808-4d52-9ad5-098dc1b94e0b.mp4
+2026-02-03 22:57:19,844 - processing.engine - INFO - Lines detected at frame 1
+2026-02-03 22:58:55,151 - processing.engine - INFO - Video processing finished. Total frames: 407
+2026-02-03 22:58:55,152 - main - INFO - Processing complete for 43bd6763-0808-4d52-9ad5-098dc1b94e0b.mp4
+2026-02-03 23:11:48,459 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-03 23:11:48,662 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-03 23:12:00,679 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-03 23:12:00,795 - processing.engine - INFO - ProcessingEngine initialized.

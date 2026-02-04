@@ -288,7 +288,7 @@ class AnimationEngine:
         trajectory_renderer = TrajectoryRenderer()
         
         # Convert 2D trajectory to 3D with parabolic curve fitting
-        trajectory_3d = self._convert_trajectory_to_3d_parabolic(trajectory, impact_point, width, height)
+        trajectory_3d = self._convert_trajectory_to_3d_parabolic(trajectory, impact_point, court_info, width, height)
         
         # Camera animation: S-curve interpolation from stadium view to top-down
         camera_positions = self._generate_camera_path_scurve(total_frames, PHASE_CAMERA_ZOOM)
@@ -331,80 +331,155 @@ class AnimationEngine:
         """Quadratic function for curve fitting."""
         return a * x**2 + b * x + c
     
-    def _convert_trajectory_to_3d_parabolic(self, trajectory_2d, impact_point, width=1920, height=1080):
+    def _convert_trajectory_to_3d_parabolic(self, trajectory_2d, impact_point, court_info=None, width=1920, height=1080):
         """
         Convert 2D screen-space trajectory to 3D world coordinates using parabolic curve fitting.
-        width, height: Video dimensions for proper coordinate normalization
+        Uses impact_point and court_info to map the landing spot accurately to the 3D court model.
         """
+        # Default court dimensions if no detections
+        court_half_length = Court3DModel.COURT_LENGTH / 2.0  # 6.7m
+        court_half_width = Court3DModel.COURT_WIDTH_DOUBLES / 2.0  # 3.05m
+        
+        # Calculate 3D impact point
+        impact_x_3d = 0
+        impact_z_3d = 0 # Default to center-ish
+        
+        if court_info and court_info.get('court_detections'):
+            # Use court detection box to map 2D point to 3D court plane
+            # Assuming first detection is the main court area
+            c_box = court_info['court_detections'][0][:4]
+            x1, y1, x2, y2 = c_box
+            
+            # Clamp impact point to court box (or slightly outside)
+            ix = max(x1, min(x2, impact_point[0]))
+            iy = max(y1, min(y2, impact_point[1]))
+            
+            # Map X: Relative to court center
+            court_center_x = (x1 + x2) / 2
+            court_width_px = max(1, x2 - x1)
+            # Normalized X (-1 to 1 from left to right)
+            norm_x = (ix - court_center_x) / (court_width_px / 2)
+            impact_x_3d = norm_x * court_half_width
+            
+            # Map Z: Relative to depth (Perspective affects this linear approx, but sufficient for visual)
+            # Screen Top (y1) = Far Court (Positive Z)
+            # Screen Bottom (y2) = Near Court (Negative Z)
+            # Camera is usually at negative Z looking positive.
+            court_height_px = max(1, y2 - y1)
+            # Normalized Y (0 to 1 from bottom to top)
+            norm_y = (y2 - iy) / court_height_px
+            # Map to Z range [-half_length, +half_length]
+            impact_z_3d = -court_half_length + (norm_y * 2 * court_half_length)
+            
+        else:
+            # Fallback based on screen position if no court detected
+            # Normalize to -1..1 range
+            nx = (impact_point[0] - width/2) / (width/2)
+            ny = (height - impact_point[1]) / height # 0 at bottom, 1 at top
+            
+            impact_x_3d = nx * 5.0 # Approx width scale
+            impact_z_3d = -5.0 + (ny * 10.0) # Map bottom-screen to -5m, top to +5m
+            
         if not trajectory_2d or len(trajectory_2d) < 3:
-            # Fallback: create simple parabolic drop trajectory
+            # Fallback: create simple parabolic drop trajectory ending at calculated impact
             return [
-                [0, 3, -2],
-                [0, 2.5, -1],
-                [0, 1.5, 0],
-                [0, 0.5, 1],
-                [0, 0, 2],
+                [impact_x_3d, 3, impact_z_3d - 2],
+                [impact_x_3d, 2.5, impact_z_3d - 1],
+                [impact_x_3d, 1.5, impact_z_3d - 0.5],
+                [impact_x_3d, 0.5, impact_z_3d - 0.2],
+                [impact_x_3d, 0, impact_z_3d],
             ]
         
         # Prepare data for curve fitting
         num_points = len(trajectory_2d)
         x_indices = np.arange(num_points)
         y_coords = np.array([y for x, y in trajectory_2d])
+        x_coords_2d = np.array([x for x, y in trajectory_2d])
         
-        # Fit parabola to Y coordinates (height)
+        # 1. Fit Height (Y) - Parabola
+        # We want the trajectory to end at Y=0 (floor) at the last frame
         try:
-            # Fit quadratic curve
             popt, _ = curve_fit(self._parabolic_function, x_indices, y_coords, 
                                p0=[-1, 0, max(y_coords)])
             a, b, c = popt
         except:
-            # Fallback if curve fitting fails
             a, b, c = -0.1, 0, max(y_coords)
-        
-        # Fit parabola to X coordinates (lateral movement) to remove "snake" jitter
-        x_coords = np.array([x for x, y in trajectory_2d])
+            
+        # 2. Fit Lateral (X) - Smooth curve or Line
         try:
-            # Fit quadratic curve to X vs Time (indices)
-            popt_x, _ = curve_fit(self._parabolic_function, x_indices, x_coords, 
-                                 p0=[0, (x_coords[-1]-x_coords[0])/num_points, x_coords[0]])
+            popt_x, _ = curve_fit(self._parabolic_function, x_indices, x_coords_2d, 
+                                 p0=[0, 0, x_coords_2d[0]])
             ax, bx, cx = popt_x
         except:
-            # Fallback to linear fit if quadratic fails
-            z = np.polyfit(x_indices, x_coords, 1)
+            z = np.polyfit(x_indices, x_coords_2d, 1)
             ax, bx, cx = 0, z[0], z[1]
-            
-        # Generate smooth trajectory with more points
+
+        # Generate smooth trajectory
         num_smooth_points = max(20, num_points * 2)
         smooth_indices = np.linspace(0, num_points - 1, num_smooth_points)
         
         trajectory_3d = []
         
+        # Estimate start Z based on impact Z and assumption of incoming shot
+        # If impact is far, shot came from near (or vice versa? usually from opponent)
+        # For a "Smash" or drop, usually comes from high.
+        # Let's assume a travel distance of approx 3-6 meters in Z for the visualized segment.
+        z_travel_dist = 6.0 
+        # If impact is negative Z (near), likely came from positive Z (far)
+        # If impact is positive Z (far), likely came from negative Z (near)
+        start_z = impact_z_3d + z_travel_dist if impact_z_3d < 0 else impact_z_3d - z_travel_dist
+        
+        # Refined: Use the trajectory Y slope to guess. 
+        # If Y is decreasing fast, it's a steep drop.
+        
         for i, t_idx in enumerate(smooth_indices):
-            # Progress through trajectory
+            # Normalized time 0..1
             t = i / (num_smooth_points - 1)
             
-            # X: lateral movement (map from 2D)
-            if len(trajectory_2d) > 1:
-                # Smooth X using fitted curve instead of interpolation
-                x_interp = self._parabolic_function(t_idx, ax, bx, cx)
-                x_3d = (x_interp - width/2) / 100.0  # Normalize to court scale using actual video center
-            else:
-                x_3d = 0
+            # --- X Calculation ---
+            # Interpolate 2D X and map to 3D X space
+            # We already have impact_x_3d which corresponds to the END of the trajectory
+            # We need to map the START of the trajectory consistently.
+            # Let's use the fitted 2D X to get a "shape", but anchor the end point to impact_x_3d
             
-            # Z: depth (forward movement on court)
-            z_3d = -3 + t * 6  # Move from back (-3m) to front (+3m)
+            x_2d_fitted = self._parabolic_function(t_idx, ax, bx, cx)
+            # Calculate offset at the end to align exactly with impact
+            end_x_2d = self._parabolic_function(num_points-1, ax, bx, cx)
             
-            # Y: height using fitted parabola
-            y_fitted = self._parabolic_function(t_idx, a, b, c)
-            # Map to 3D height (normalize and scale)
-            y_3d = max(0, (max(y_coords) - y_fitted) / 100.0)  # Invert and scale
-            y_3d = min(3.0, y_3d)  # Cap maximum height
+            # Current 2D X relative to end 2D X
+            delta_x_2d = x_2d_fitted - end_x_2d
+            
+            # Convert px delta to meters (approx scale)
+            # using court width assumption at impact
+            scale_x = court_half_width / (court_width_px / 2) if (court_info and 'court_width_px' in locals()) else 0.01
+            
+            # 3D X = Impact X + (Distance from End in pixels * scale)
+            x_3d = impact_x_3d + (delta_x_2d * scale_x)
+
+            # --- Y Calculation ---
+            # Fitted Y represents screen height (pixels)
+            y_2d_fitted = self._parabolic_function(t_idx, a, b, c)
+            end_y_2d = self._parabolic_function(num_points-1, a, b, c)
+            
+            # Normalize Y so that end is 0 (ground)
+            # Scale factor: Max visible Y (net height?) is approx 1.55m
+            # Map pixel height range to meters.
+            y_3d = (end_y_2d - y_2d_fitted) * 0.02 # Invert: higher pixel Y (lower screen) is lower 3D Y?
+            # Actually Y coordinates: 0 is top, Height is bottom.
+            # Y decreases as it goes up on screen (higher altitude). Y increases as it drops (lower altitude).
+            # So (End Y - Current Y) should be positive if Current is "higher" on screen (lower value)
+            y_3d = (end_y_2d - y_2d_fitted) * 0.02 # Scale pixels to meters approx
+             
+            # Safety clamp
+            y_3d = max(0, y_3d)
+            if t == 1.0: y_3d = 0 # Force ground touch
+
+            # --- Z Calculation ---
+            # Linear interpolation for Z from start to impact
+            z_3d = start_z + (impact_z_3d - start_z) * t
             
             trajectory_3d.append([x_3d, y_3d, z_3d])
-        
-        # Ensure last point touches ground
-        trajectory_3d[-1][1] = 0
-        
+            
         return trajectory_3d
     
     def _generate_camera_path_scurve(self, total_frames, zoom_duration):
