@@ -49,25 +49,56 @@ class DecisionEngine:
 
         # Bounce detection logic:
         # We look for a local maximum in Y (lowest point on screen)
+        # OR a landing where the shuttle stops (Y increases then flattens)
         y_coords = [p[1][1] for p in self.history]
         
-        # Check if the middle point is the lowest (max Y)
-        mid_idx = len(y_coords) // 2
-        mid_y = y_coords[mid_idx]
+        # Find the actual lowest point (maximum Y value) in trajectory
+        max_y_idx = y_coords.index(max(y_coords))
+        max_y = y_coords[max_y_idx]
         
-        # Relaxed check: mid point is the local maximum (lowest physical point)
-        # Using a small margin to filter out noise, but sensitive enough for shallow bounces
+        # Analyze velocities to distinguish floor bounces from racket hits
+        # Incoming drop (start -> max): Should be positive (increasing Y)
+        dy_in = max_y - y_coords[0]
+        # Outgoing rise (max -> end): Should be negative (decreasing Y) or near zero (stop)
+        dy_out = y_coords[-1] - max_y
+        
+        # 1. Must be a significant drop to count as a landing trajectory
+        if dy_in < 2.0:
+            return None
+            
+        # 2. Energy Ratio Check:
+        # Floor bounce/landing dissipates energy (outgoing speed < incoming speed)
+        # Racket hit adds energy (outgoing speed > incoming speed, often significantly)
+        # We use displacement as a proxy for speed
+        dist_in = abs(dy_in)
+        dist_out = abs(dy_out)
+        
+        # If outgoing move is significantly larger than incoming, it's likely a racket hit (e.g. lift/clear)
+        if dist_out > dist_in * 1.5:
+             # Likely a racket hit - ignore
+             return None
+
+        # 3. Peak/Corner Detection
+        # Check if max_y is effectively the local maximum (lowest point)
+        # We allow it to be equal to neighbors (for "sticky" landings)
+        # but it must be clearly lower (higher Y) than the start.
+        
         margin = 0.5
-        # Ensure mid point is the definitive peak among neighbors
-        is_peak = all(mid_y >= y for y in y_coords)
-        # Ensure it drops off at the ends of the window
-        is_distinct = (mid_y >= y_coords[0] + margin) and (mid_y >= y_coords[-1] + margin)
+        is_peak = all(max_y >= y - margin for y in y_coords) # Relaxed peak check
         
-        is_local_max = is_peak and is_distinct
+        # Distinctness: Must have dropped significantly
+        dropped_in = (max_y >= y_coords[0] + margin)
+        
+        # For outgoing, we accept either a rise (bounce) OR a flat tail (landing/stop)
+        # We reject if it continues to drop significantly (which would mean mid is not the bottom)
+        # But `is_peak` already covers that roughly.
+        # We just need to ensure it didn't just "drift" down.
+        
+        is_local_max = is_peak and dropped_in
         
         if is_local_max:
-            # Bounce detected at the middle frame of our history
-            bounce_frame, bounce_point = self.history[mid_idx]
+            # Bounce detected at the actual lowest point in our history
+            bounce_frame, bounce_point = self.history[max_y_idx]
             
             # Determine IN/OUT using LineDetector if available
             is_in = False

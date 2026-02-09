@@ -145,3 +145,437 @@ AttributeError: module 'cv2' has no attribute 'FONT_HERSHEY_BOLD'
 2026-02-04 18:31:50,016 - processing.engine - INFO - ProcessingEngine initialized.
 2026-02-04 18:31:55,101 - processing.engine - INFO - Initializing ProcessingEngine...
 2026-02-04 18:31:55,222 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-04 18:43:24,760 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-04 18:43:24,871 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-04 18:43:36,687 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-04 18:43:36,814 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-04 21:40:40,639 - main - INFO - Starting processing for 81786f43-4e5b-4902-bdbb-cedff3b72033.mp4 with mode=doubles, shot_type=rally
+2026-02-04 21:40:40,640 - processing.engine - INFO - Opening video: uploads\81786f43-4e5b-4902-bdbb-cedff3b72033.mp4
+2026-02-04 21:40:40,907 - processing.engine - INFO - Video props: 1920x1080 @ 30.0fps
+2026-02-04 21:40:40,960 - processing.engine - INFO - Output writer initialized: outputs\processed_81786f43-4e5b-4902-bdbb-cedff3b72033.mp4
+2026-02-04 21:40:41,644 - processing.engine - INFO - Lines detected at frame 1
+2026-02-04 21:41:00,895 - processing.engine - INFO - Decision made at frame 47: {'decision': 'OUT', 'point': (920.6028442382812, 919.5535888671875), 'frame': 34}
+2026-02-04 21:46:44,078 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: OUT
+2026-02-04 21:46:44,101 - processing.animation - INFO - DEBUG PROJECTION: Cam Pos: [  0.  12. -15.], Pitch: 45.0
+2026-02-04 21:46:44,102 - processing.animation - INFO - DEBUG PROJECTION: Court Vertices: [[-3.05, 0, -6.7], [3.05, 0, -6.7], [3.05, 0, 6.7], [-3.05, 0, 6.7]]
+2026-02-04 21:46:44,102 - processing.animation - INFO - DEBUG PROJECTION: Projected 2D: [(761, 710), (1158, 710), (1079, 270), (840, 270)]
+2026-02-04 21:47:17,806 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-04 21:47:20,048 - processing.engine - INFO - Video processing finished. Total frames: 394
+2026-02-04 21:47:20,050 - main - INFO - Processing complete for 81786f43-4e5b-4902-bdbb-cedff3b72033.mp4
+2026-02-08 15:13:53,628 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-08 15:13:53,841 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-08 15:19:39,416 - __main__ - INFO - Starting processing for c3494e8d-d98d-4986-9792-073d672351b8.mp4 with mode=singles, shot_type=rally
+2026-02-08 15:19:39,416 - processing.engine - INFO - Opening video: uploads\c3494e8d-d98d-4986-9792-073d672351b8.mp4
+2026-02-08 15:19:39,599 - processing.engine - INFO - Video props: 624x352 @ 30.0fps
+2026-02-08 15:19:39,616 - processing.engine - INFO - Output writer initialized: outputs\processed_c3494e8d-d98d-4986-9792-073d672351b8.mp4
+2026-02-08 15:19:40,059 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 15:19:46,367 - processing.engine - INFO - Decision made at frame 49: {'decision': 'IN', 'point': (418.48663330078125, 217.2685089111328), 'frame': 40}
+2026-02-08 15:20:10,033 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: OUT
+2026-02-08 15:20:10,038 - processing.animation - INFO - DEBUG PROJECTION: Cam Pos: [  0.  12. -15.], Pitch: 45.0
+2026-02-08 15:20:10,038 - processing.animation - INFO - DEBUG PROJECTION: Court Vertices: [[-2.59, 0, -6.7], [2.59, 0, -6.7], [2.59, 0, 6.7], [-2.59, 0, 6.7]]
+2026-02-08 15:20:10,038 - processing.animation - INFO - DEBUG PROJECTION: Projected 2D: [(256, 231), (367, 231), (345, 88), (278, 88)]
+2026-02-08 15:20:14,822 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-08 15:20:15,424 - processing.engine - INFO - Video processing finished. Total frames: 163
+2026-02-08 15:20:15,425 - __main__ - INFO - Processing complete for c3494e8d-d98d-4986-9792-073d672351b8.mp4
+2026-02-08 15:20:15,805 - asyncio - ERROR - Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-02-08 15:21:29,282 - asyncio - ERROR - Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-02-08 15:24:10,482 - __main__ - INFO - Starting processing for b8754d07-efc9-47cf-90ce-6216deec58c1.mp4 with mode=singles, shot_type=rally
+2026-02-08 15:24:10,482 - processing.engine - INFO - Opening video: uploads\b8754d07-efc9-47cf-90ce-6216deec58c1.mp4
+2026-02-08 15:24:10,508 - processing.engine - INFO - Video props: 720x1280 @ 30.0fps
+2026-02-08 15:24:10,524 - processing.engine - INFO - Output writer initialized: outputs\processed_b8754d07-efc9-47cf-90ce-6216deec58c1.mp4
+2026-02-08 15:24:10,730 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 15:24:14,901 - processing.engine - INFO - Decision made at frame 24: {'decision': 'OUT', 'point': (693.1209716796875, 736.8694458007812), 'frame': 15}
+2026-02-08 15:28:08,206 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: OUT
+2026-02-08 15:28:22,339 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-08 15:28:23,703 - processing.engine - INFO - Video processing finished. Total frames: 478
+2026-02-08 15:28:23,704 - __main__ - INFO - Processing complete for b8754d07-efc9-47cf-90ce-6216deec58c1.mp4
+2026-02-08 15:28:24,043 - asyncio - ERROR - Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-02-08 15:37:05,141 - __main__ - INFO - Starting processing for 3dbed720-2cd1-4379-88f6-ceff9b6b284e.mp4 with mode=doubles, shot_type=rally
+2026-02-08 15:37:05,141 - processing.engine - INFO - Opening video: uploads\3dbed720-2cd1-4379-88f6-ceff9b6b284e.mp4
+2026-02-08 15:37:05,159 - processing.engine - INFO - Video props: 720x1280 @ 30.0fps
+2026-02-08 15:37:05,174 - processing.engine - INFO - Output writer initialized: outputs\processed_3dbed720-2cd1-4379-88f6-ceff9b6b284e.mp4
+2026-02-08 15:37:05,354 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 15:37:31,025 - processing.engine - INFO - Decision made at frame 69: {'decision': 'IN', 'point': (5.572481632232666, 791.4340209960938), 'frame': 47}
+2026-02-08 15:48:36,516 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: IN
+2026-02-08 15:48:56,424 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-08 15:48:57,965 - processing.engine - INFO - Video processing finished. Total frames: 1108
+2026-02-08 15:48:57,966 - __main__ - INFO - Processing complete for 3dbed720-2cd1-4379-88f6-ceff9b6b284e.mp4
+2026-02-08 15:48:58,302 - asyncio - ERROR - Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-02-08 16:20:42,427 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-08 16:20:42,609 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-08 16:21:44,269 - __main__ - INFO - Starting processing for 7c6939ea-795d-440f-9d7e-3f458064c7b6.mp4 with mode=doubles, shot_type=rally
+2026-02-08 16:21:44,270 - processing.engine - INFO - Opening video: uploads\7c6939ea-795d-440f-9d7e-3f458064c7b6.mp4
+2026-02-08 16:21:44,431 - processing.engine - INFO - Video props: 720x1280 @ 30.0fps
+2026-02-08 16:21:44,450 - processing.engine - INFO - Output writer initialized: outputs\processed_7c6939ea-795d-440f-9d7e-3f458064c7b6.mp4
+2026-02-08 16:21:44,820 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 16:21:59,297 - processing.engine - INFO - Decision made at frame 49: {'decision': 'IN', 'point': (5.572481632232666, 791.4340209960938), 'frame': 47}
+2026-02-08 16:33:28,196 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: IN
+2026-02-08 16:33:28,198 - processing.animation - INFO - DEBUG PROJECTION: Cam Pos: [  0.  12. -15.], Pitch: 45.0
+2026-02-08 16:33:28,198 - processing.animation - INFO - DEBUG PROJECTION: Court Vertices: [[-3.05, 0, -6.7], [3.05, 0, -6.7], [3.05, 0, 6.7], [-3.05, 0, 6.7]]
+2026-02-08 16:33:28,198 - processing.animation - INFO - DEBUG PROJECTION: Projected 2D: [(124, 842), (595, 842), (501, 320), (218, 320)]
+2026-02-08 16:33:48,816 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-08 16:33:50,314 - processing.engine - INFO - Video processing finished. Total frames: 1108
+2026-02-08 16:33:50,314 - __main__ - INFO - Processing complete for 7c6939ea-795d-440f-9d7e-3f458064c7b6.mp4
+2026-02-08 16:33:51,002 - asyncio - ERROR - Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-02-08 16:38:31,101 - __main__ - INFO - Starting processing for 52ba5b14-c510-458a-be3a-49e37928b072.mp4 with mode=doubles, shot_type=rally
+2026-02-08 16:38:31,101 - processing.engine - INFO - Opening video: uploads\52ba5b14-c510-458a-be3a-49e37928b072.mp4
+2026-02-08 16:38:31,134 - processing.engine - INFO - Video props: 1920x1080 @ 30.0fps
+2026-02-08 16:38:31,158 - processing.engine - INFO - Output writer initialized: outputs\processed_52ba5b14-c510-458a-be3a-49e37928b072.mp4
+2026-02-08 16:38:31,393 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 16:38:32,271 - processing.engine - INFO - Decision made at frame 7: {'decision': 'IN', 'point': (428.08642578125, 1021.294921875), 'frame': 1083}
+2026-02-08 16:40:08,936 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: IN
+2026-02-08 16:40:44,364 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-08 16:40:46,509 - processing.engine - INFO - Video processing finished. Total frames: 125
+2026-02-08 16:40:46,510 - __main__ - INFO - Processing complete for 52ba5b14-c510-458a-be3a-49e37928b072.mp4
+2026-02-08 16:40:46,840 - asyncio - ERROR - Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-02-08 16:52:51,668 - __main__ - INFO - Starting processing for 919c906d-5a4f-449c-8100-b55ad5bda210.mp4 with mode=doubles, shot_type=rally
+2026-02-08 16:52:51,669 - processing.engine - INFO - Opening video: uploads\919c906d-5a4f-449c-8100-b55ad5bda210.mp4
+2026-02-08 16:52:51,718 - processing.engine - INFO - Video props: 1908x968 @ 30.0fps
+2026-02-08 16:52:51,765 - processing.engine - INFO - Output writer initialized: outputs\processed_919c906d-5a4f-449c-8100-b55ad5bda210.mp4
+2026-02-08 16:52:52,027 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 16:52:52,773 - processing.engine - INFO - Decision made at frame 8: {'decision': 'OUT', 'point': (1615.4014892578125, 937.5617065429688), 'frame': 124}
+2026-02-08 16:57:19,639 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: IN
+2026-02-08 16:57:49,537 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-08 16:57:51,537 - processing.engine - INFO - Video processing finished. Total frames: 365
+2026-02-08 16:57:51,538 - __main__ - INFO - Processing complete for 919c906d-5a4f-449c-8100-b55ad5bda210.mp4
+2026-02-08 17:08:58,553 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-08 17:08:58,735 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-08 17:09:36,813 - __main__ - INFO - Starting processing for e05cfe86-686a-47b7-9f78-391f5f091968.mp4 with mode=doubles, shot_type=rally
+2026-02-08 17:09:36,813 - processing.engine - INFO - Opening video: uploads\e05cfe86-686a-47b7-9f78-391f5f091968.mp4
+2026-02-08 17:09:36,955 - processing.engine - INFO - Video props: 1776x964 @ 30.0fps
+2026-02-08 17:09:36,986 - processing.engine - INFO - Output writer initialized: outputs\processed_e05cfe86-686a-47b7-9f78-391f5f091968.mp4
+2026-02-08 17:09:37,315 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 17:09:48,049 - processing.engine - INFO - Decision made at frame 40: {'decision': 'IN', 'point': (1202.1875, 561.1031494140625), 'frame': 36}
+2026-02-08 17:17:26,805 - processing.engine - INFO - End of stream. Padding with 5 frames...
+2026-02-08 17:17:30,458 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: OUT
+2026-02-08 17:17:30,460 - processing.animation - INFO - DEBUG PROJECTION: Cam Pos: [  0.  12. -15.], Pitch: 45.0
+2026-02-08 17:17:30,460 - processing.animation - INFO - DEBUG PROJECTION: Court Vertices: [[-3.05, 0, -6.7], [3.05, 0, -6.7], [3.05, 0, 6.7], [-3.05, 0, 6.7]]
+2026-02-08 17:17:30,461 - processing.animation - INFO - DEBUG PROJECTION: Projected 2D: [(710, 634), (1065, 634), (994, 241), (781, 241)]
+2026-02-08 17:17:57,446 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-08 17:17:59,339 - processing.engine - INFO - Video processing finished. Total frames: 581
+2026-02-08 17:17:59,340 - __main__ - INFO - Processing complete for e05cfe86-686a-47b7-9f78-391f5f091968.mp4
+2026-02-08 17:17:59,711 - asyncio - ERROR - Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-02-08 17:18:00,106 - asyncio - ERROR - Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-02-08 17:19:07,207 - __main__ - INFO - Starting processing for 0e0e8892-d347-4158-835b-62be97e32162.mp4 with mode=doubles, shot_type=rally
+2026-02-08 17:19:07,207 - processing.engine - INFO - Opening video: uploads\0e0e8892-d347-4158-835b-62be97e32162.mp4
+2026-02-08 17:19:07,254 - processing.engine - INFO - Video props: 1908x968 @ 30.0fps
+2026-02-08 17:19:07,278 - processing.engine - INFO - Output writer initialized: outputs\processed_0e0e8892-d347-4158-835b-62be97e32162.mp4
+2026-02-08 17:19:07,485 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 17:19:09,347 - processing.engine - INFO - Decision made at frame 16: {'decision': 'OUT', 'point': (1258.380859375, 515.4783935546875), 'frame': 13}
+2026-02-08 17:23:43,528 - processing.engine - INFO - End of stream. Padding with 5 frames...
+2026-02-08 17:23:47,021 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: IN
+2026-02-08 17:24:14,530 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-08 17:24:16,423 - processing.engine - INFO - Video processing finished. Total frames: 370
+2026-02-08 17:24:16,424 - __main__ - INFO - Processing complete for 0e0e8892-d347-4158-835b-62be97e32162.mp4
+2026-02-08 17:24:16,761 - asyncio - ERROR - Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-02-08 17:56:54,525 - __main__ - INFO - Starting processing for 9a621264-7d66-45f5-a65a-e2e39f85f0c4.mp4 with mode=doubles, shot_type=rally
+2026-02-08 17:56:54,525 - processing.engine - INFO - Opening video: uploads\9a621264-7d66-45f5-a65a-e2e39f85f0c4.mp4
+2026-02-08 17:56:54,584 - processing.engine - INFO - Video props: 1908x968 @ 30.0fps
+2026-02-08 17:56:54,625 - processing.engine - INFO - Output writer initialized: outputs\processed_9a621264-7d66-45f5-a65a-e2e39f85f0c4.mp4
+2026-02-08 17:56:55,152 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 17:57:00,569 - processing.engine - INFO - Decision made at frame 26: {'decision': 'OUT', 'point': (1258.380859375, 515.4783935546875), 'frame': 13}
+2026-02-08 18:02:09,819 - processing.engine - INFO - End of stream. Padding with 5 frames...
+2026-02-08 18:02:13,383 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: IN
+2026-02-08 18:02:40,783 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-08 18:02:42,701 - processing.engine - INFO - Video processing finished. Total frames: 370
+2026-02-08 18:02:42,702 - __main__ - INFO - Processing complete for 9a621264-7d66-45f5-a65a-e2e39f85f0c4.mp4
+2026-02-08 18:02:42,790 - __main__ - INFO - Starting processing for 14a12b1c-0a88-41ce-9f13-c7055bbd7b5f.mp4 with mode=doubles, shot_type=rally
+2026-02-08 18:02:42,791 - processing.engine - INFO - Opening video: uploads\14a12b1c-0a88-41ce-9f13-c7055bbd7b5f.mp4
+2026-02-08 18:02:42,840 - processing.engine - INFO - Video props: 1908x968 @ 30.0fps
+2026-02-08 18:02:42,863 - processing.engine - INFO - Output writer initialized: outputs\processed_14a12b1c-0a88-41ce-9f13-c7055bbd7b5f.mp4
+2026-02-08 18:02:43,033 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 18:02:47,029 - processing.engine - INFO - Decision made at frame 26: {'decision': 'OUT', 'point': (1258.380859375, 515.4783935546875), 'frame': 13}
+2026-02-08 18:08:00,926 - processing.engine - INFO - End of stream. Padding with 5 frames...
+2026-02-08 18:08:05,281 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: IN
+2026-02-08 18:08:37,920 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-08 18:08:40,649 - processing.engine - INFO - Video processing finished. Total frames: 370
+2026-02-08 18:08:40,650 - __main__ - INFO - Processing complete for 14a12b1c-0a88-41ce-9f13-c7055bbd7b5f.mp4
+2026-02-08 18:13:25,366 - __main__ - INFO - Starting processing for 529a578b-a9e3-40a9-9a99-6286e27549cd.mp4 with mode=singles, shot_type=rally
+2026-02-08 18:13:25,366 - processing.engine - INFO - Opening video: uploads\529a578b-a9e3-40a9-9a99-6286e27549cd.mp4
+2026-02-08 18:13:25,399 - processing.engine - INFO - Video props: 720x1280 @ 30.0fps
+2026-02-08 18:13:25,415 - processing.engine - INFO - Output writer initialized: outputs\processed_529a578b-a9e3-40a9-9a99-6286e27549cd.mp4
+2026-02-08 18:13:25,768 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 18:13:43,902 - processing.engine - INFO - Decision made at frame 49: {'decision': 'IN', 'point': (5.572481632232666, 791.4340209960938), 'frame': 47}
+2026-02-08 18:26:36,279 - processing.engine - INFO - End of stream. Padding with 5 frames...
+2026-02-08 18:26:38,432 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: IN
+2026-02-08 18:26:55,765 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-08 18:26:57,049 - processing.engine - INFO - Video processing finished. Total frames: 1113
+2026-02-08 18:26:57,050 - __main__ - INFO - Processing complete for 529a578b-a9e3-40a9-9a99-6286e27549cd.mp4
+2026-02-08 18:26:57,114 - __main__ - INFO - Starting processing for 8e042067-7670-4532-a8d1-80cb58e8f956.mp4 with mode=doubles, shot_type=rally
+2026-02-08 18:26:57,114 - processing.engine - INFO - Opening video: uploads\8e042067-7670-4532-a8d1-80cb58e8f956.mp4
+2026-02-08 18:26:57,130 - processing.engine - INFO - Video props: 720x1280 @ 30.0fps
+2026-02-08 18:26:57,144 - processing.engine - INFO - Output writer initialized: outputs\processed_8e042067-7670-4532-a8d1-80cb58e8f956.mp4
+2026-02-08 18:26:57,304 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 18:26:57,304 - processing.engine - INFO - Decision made at frame 1: {'decision': 'OUT', 'point': (428.08642578125, 1021.294921875), 'frame': 1083}
+2026-02-08 18:31:56,661 - processing.engine - INFO - End of stream. Padding with 5 frames...
+2026-02-08 18:31:58,895 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: OUT
+2026-02-08 18:32:15,829 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-08 18:32:17,563 - processing.engine - INFO - Video processing finished. Total frames: 483
+2026-02-08 18:32:17,564 - __main__ - INFO - Processing complete for 8e042067-7670-4532-a8d1-80cb58e8f956.mp4
+2026-02-08 18:39:59,977 - __main__ - INFO - Starting processing for 89aa592e-4e8f-4e14-a86e-588c563cd000.mp4 with mode=doubles, shot_type=rally
+2026-02-08 18:39:59,978 - processing.engine - INFO - Opening video: uploads\89aa592e-4e8f-4e14-a86e-588c563cd000.mp4
+2026-02-08 18:40:00,017 - processing.engine - INFO - Video props: 720x1280 @ 60.0fps
+2026-02-08 18:40:00,051 - processing.engine - INFO - Output writer initialized: outputs\processed_89aa592e-4e8f-4e14-a86e-588c563cd000.mp4
+2026-02-08 18:40:00,346 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 18:41:21,795 - processing.engine - INFO - Decision made at frame 153: {'decision': 'OUT', 'point': (594.0985717773438, 461.21514892578125), 'frame': 152}
+2026-02-08 18:53:21,512 - processing.engine - INFO - End of stream. Padding with 5 frames...
+2026-02-08 18:53:23,353 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: OUT
+2026-02-08 18:53:47,526 - processing.engine - INFO - Animation generation complete. 240 frames added.
+2026-02-08 18:53:48,803 - processing.engine - INFO - Video processing finished. Total frames: 1362
+2026-02-08 18:53:48,804 - __main__ - INFO - Processing complete for 89aa592e-4e8f-4e14-a86e-588c563cd000.mp4
+2026-02-08 18:56:10,372 - __main__ - INFO - Starting processing for 2de86648-9778-4275-a866-4fcb26e85da8.mp4 with mode=doubles, shot_type=rally
+2026-02-08 18:56:10,373 - processing.engine - INFO - Opening video: uploads\2de86648-9778-4275-a866-4fcb26e85da8.mp4
+2026-02-08 18:56:10,406 - processing.engine - INFO - Video props: 720x1280 @ 60.0fps
+2026-02-08 18:56:10,431 - processing.engine - INFO - Output writer initialized: outputs\processed_2de86648-9778-4275-a866-4fcb26e85da8.mp4
+2026-02-08 18:56:10,698 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 18:56:12,809 - processing.engine - INFO - Decision made at frame 12: {'decision': 'OUT', 'point': (644.9156494140625, 644.900634765625), 'frame': 1348}
+2026-02-08 19:09:33,512 - processing.engine - INFO - End of stream. Padding with 5 frames...
+2026-02-08 19:09:35,587 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: OUT
+2026-02-08 19:10:03,638 - processing.engine - INFO - Animation generation complete. 240 frames added.
+2026-02-08 19:10:04,956 - processing.engine - INFO - Video processing finished. Total frames: 1362
+2026-02-08 19:10:04,957 - __main__ - INFO - Processing complete for 2de86648-9778-4275-a866-4fcb26e85da8.mp4
+2026-02-08 19:10:05,015 - __main__ - INFO - Starting processing for 33b0065a-3537-424b-a81d-2ee0fc5c3452.mp4 with mode=doubles, shot_type=rally
+2026-02-08 19:10:05,016 - processing.engine - INFO - Opening video: uploads\33b0065a-3537-424b-a81d-2ee0fc5c3452.mp4
+2026-02-08 19:10:05,037 - processing.engine - INFO - Video props: 720x1280 @ 30.0fps
+2026-02-08 19:10:05,056 - processing.engine - INFO - Output writer initialized: outputs\processed_33b0065a-3537-424b-a81d-2ee0fc5c3452.mp4
+2026-02-08 19:10:05,369 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 19:10:07,862 - processing.engine - INFO - Decision made at frame 20: {'decision': 'OUT', 'point': (693.1209716796875, 736.8694458007812), 'frame': 15}
+2026-02-08 19:14:59,787 - processing.engine - INFO - End of stream. Padding with 5 frames...
+2026-02-08 19:15:02,565 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: OUT
+2026-02-08 19:15:23,056 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-08 19:15:25,030 - processing.engine - INFO - Video processing finished. Total frames: 483
+2026-02-08 19:15:25,031 - __main__ - INFO - Processing complete for 33b0065a-3537-424b-a81d-2ee0fc5c3452.mp4
+2026-02-08 19:15:25,038 - asyncio - ERROR - Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-02-08 20:03:26,172 - __main__ - INFO - Starting processing for 1bdbd362-cbf1-4e79-98a9-587247195def.mp4 with mode=doubles, shot_type=rally
+2026-02-08 20:03:26,173 - processing.engine - INFO - Opening video: uploads\1bdbd362-cbf1-4e79-98a9-587247195def.mp4
+2026-02-08 20:03:26,215 - processing.engine - INFO - Video props: 720x1280 @ 60.0fps
+2026-02-08 20:03:26,235 - processing.engine - INFO - Output writer initialized: outputs\processed_1bdbd362-cbf1-4e79-98a9-587247195def.mp4
+2026-02-08 20:03:26,602 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 20:04:41,445 - processing.engine - INFO - Decision made at frame 153: {'decision': 'OUT', 'point': (594.0985717773438, 461.21514892578125), 'frame': 152}
+2026-02-08 20:17:49,724 - processing.engine - INFO - End of stream. Padding with 5 frames...
+2026-02-08 20:17:51,645 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: OUT
+2026-02-08 20:18:18,531 - processing.engine - INFO - Animation generation complete. 240 frames added.
+2026-02-08 20:18:19,825 - processing.engine - INFO - Video processing finished. Total frames: 1362
+2026-02-08 20:18:19,826 - __main__ - INFO - Processing complete for 1bdbd362-cbf1-4e79-98a9-587247195def.mp4
+2026-02-08 20:18:19,938 - __main__ - INFO - Starting processing for 98b1f17a-8c05-4d0e-a0cb-c58fac3d95ee.mp4 with mode=doubles, shot_type=rally
+2026-02-08 20:18:19,938 - processing.engine - INFO - Opening video: uploads\98b1f17a-8c05-4d0e-a0cb-c58fac3d95ee.mp4
+2026-02-08 20:18:19,958 - processing.engine - INFO - Video props: 720x1280 @ 60.0fps
+2026-02-08 20:18:19,973 - processing.engine - INFO - Output writer initialized: outputs\processed_98b1f17a-8c05-4d0e-a0cb-c58fac3d95ee.mp4
+2026-02-08 20:18:20,244 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 20:18:22,135 - processing.engine - INFO - Decision made at frame 12: {'decision': 'OUT', 'point': (644.9156494140625, 644.900634765625), 'frame': 1348}
+2026-02-08 20:25:49,238 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-08 20:25:49,392 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-08 20:26:08,031 - __main__ - INFO - Starting processing for ae763fc6-9416-4c70-9149-af108325bf18.mp4 with mode=doubles, shot_type=rally
+2026-02-08 20:26:08,031 - processing.engine - INFO - Opening video: uploads\ae763fc6-9416-4c70-9149-af108325bf18.mp4
+2026-02-08 20:26:08,087 - processing.engine - INFO - Video props: 720x1280 @ 60.0fps
+2026-02-08 20:26:08,109 - processing.engine - INFO - Output writer initialized: outputs\processed_ae763fc6-9416-4c70-9149-af108325bf18.mp4
+2026-02-08 20:26:08,489 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 20:27:29,286 - processing.engine - INFO - Decision made at frame 162: {'decision': 'OUT', 'point': (594.0985717773438, 461.21514892578125), 'frame': 152}
+2026-02-08 20:39:42,668 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: IN
+2026-02-08 20:39:42,674 - processing.animation - INFO - DEBUG PROJECTION: Cam Pos: [  0.  12. -15.], Pitch: 45.0
+2026-02-08 20:39:42,674 - processing.animation - INFO - DEBUG PROJECTION: Court Vertices: [[-3.05, 0, -6.7], [3.05, 0, -6.7], [3.05, 0, 6.7], [-3.05, 0, 6.7]]
+2026-02-08 20:39:42,674 - processing.animation - INFO - DEBUG PROJECTION: Projected 2D: [(124, 842), (595, 842), (501, 320), (218, 320)]
+2026-02-08 20:40:09,673 - processing.engine - INFO - Animation generation complete. 240 frames added.
+2026-02-08 20:40:11,005 - processing.engine - INFO - Video processing finished. Total frames: 1357
+2026-02-08 20:40:11,006 - __main__ - INFO - Processing complete for ae763fc6-9416-4c70-9149-af108325bf18.mp4
+2026-02-08 20:40:11,375 - __main__ - INFO - Starting processing for 005eaec0-02d9-4503-8510-14c3bcd5a6d0.mp4 with mode=doubles, shot_type=rally
+2026-02-08 20:40:11,375 - processing.engine - INFO - Opening video: uploads\005eaec0-02d9-4503-8510-14c3bcd5a6d0.mp4
+2026-02-08 20:40:11,413 - processing.engine - INFO - Video props: 1920x1080 @ 30.0fps
+2026-02-08 20:40:11,439 - processing.engine - INFO - Output writer initialized: outputs\processed_005eaec0-02d9-4503-8510-14c3bcd5a6d0.mp4
+2026-02-08 20:40:11,704 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 20:40:14,999 - processing.engine - INFO - Decision made at frame 22: {'decision': 'IN', 'point': (644.9156494140625, 644.900634765625), 'frame': 1348}
+2026-02-08 20:42:05,290 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-08 20:42:05,407 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-08 20:42:10,556 - __main__ - INFO - Starting processing for e1b1ac3a-fdea-4eac-bf66-4231b08feb14.mp4 with mode=doubles, shot_type=rally
+2026-02-08 20:42:10,556 - processing.engine - INFO - Opening video: uploads\e1b1ac3a-fdea-4eac-bf66-4231b08feb14.mp4
+2026-02-08 20:42:10,602 - processing.engine - INFO - Video props: 1920x1080 @ 30.0fps
+2026-02-08 20:42:10,627 - processing.engine - INFO - Output writer initialized: outputs\processed_e1b1ac3a-fdea-4eac-bf66-4231b08feb14.mp4
+2026-02-08 20:42:10,983 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 20:42:29,805 - processing.engine - INFO - Decision made at frame 46: {'decision': 'IN', 'point': (1005.6214599609375, 710.65185546875), 'frame': 36}
+2026-02-08 20:43:58,268 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: IN
+2026-02-08 20:43:58,270 - processing.animation - INFO - DEBUG PROJECTION: Cam Pos: [  0.  12. -15.], Pitch: 45.0
+2026-02-08 20:43:58,271 - processing.animation - INFO - DEBUG PROJECTION: Court Vertices: [[-3.05, 0, -6.7], [3.05, 0, -6.7], [3.05, 0, 6.7], [-3.05, 0, 6.7]]
+2026-02-08 20:43:58,271 - processing.animation - INFO - DEBUG PROJECTION: Projected 2D: [(761, 710), (1158, 710), (1079, 270), (840, 270)]
+2026-02-08 20:44:36,050 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-08 20:44:38,261 - processing.engine - INFO - Video processing finished. Total frames: 125
+2026-02-08 20:44:38,262 - __main__ - INFO - Processing complete for e1b1ac3a-fdea-4eac-bf66-4231b08feb14.mp4
+2026-02-08 20:44:38,670 - asyncio - ERROR - Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-02-08 20:46:13,079 - asyncio - ERROR - Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-02-08 21:25:14,601 - __main__ - INFO - Starting processing for 1710e15a-84c5-472f-b2d8-b8b5fc09dbb7.mp4 with mode=doubles, shot_type=rally
+2026-02-08 21:25:14,601 - processing.engine - INFO - Opening video: uploads\1710e15a-84c5-472f-b2d8-b8b5fc09dbb7.mp4
+2026-02-08 21:25:14,633 - processing.engine - INFO - Video props: 720x1280 @ 60.0fps
+2026-02-08 21:25:14,660 - processing.engine - INFO - Output writer initialized: outputs\processed_1710e15a-84c5-472f-b2d8-b8b5fc09dbb7.mp4
+2026-02-08 21:25:14,952 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 21:25:16,523 - processing.engine - INFO - Decision made at frame 9: {'decision': 'OUT', 'point': (1615.4014892578125, 937.5617065429688), 'frame': 124}
+2026-02-08 21:39:23,611 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: IN
+2026-02-08 21:39:48,350 - processing.engine - INFO - Animation generation complete. 240 frames added.
+2026-02-08 21:39:49,567 - processing.engine - INFO - Video processing finished. Total frames: 1357
+2026-02-08 21:39:49,568 - __main__ - INFO - Processing complete for 1710e15a-84c5-472f-b2d8-b8b5fc09dbb7.mp4
+2026-02-08 21:39:49,656 - __main__ - INFO - Starting processing for eb0ad7e6-d7c4-479b-9e27-4210edde2ed3.mp4 with mode=doubles, shot_type=rally
+2026-02-08 21:39:49,656 - processing.engine - INFO - Opening video: uploads\eb0ad7e6-d7c4-479b-9e27-4210edde2ed3.mp4
+2026-02-08 21:39:49,690 - processing.engine - INFO - Video props: 1920x1080 @ 30.0fps
+2026-02-08 21:39:49,713 - processing.engine - INFO - Output writer initialized: outputs\processed_eb0ad7e6-d7c4-479b-9e27-4210edde2ed3.mp4
+2026-02-08 21:39:49,944 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 21:39:52,392 - processing.engine - INFO - Decision made at frame 22: {'decision': 'IN', 'point': (644.9156494140625, 644.900634765625), 'frame': 1348}
+2026-02-08 21:41:30,005 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: IN
+2026-02-08 21:42:05,100 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-08 21:42:07,228 - processing.engine - INFO - Video processing finished. Total frames: 125
+2026-02-08 21:42:07,229 - __main__ - INFO - Processing complete for eb0ad7e6-d7c4-479b-9e27-4210edde2ed3.mp4
+2026-02-08 21:48:54,765 - __main__ - INFO - Starting processing for 7e180613-1301-43c7-b4eb-dc3e53317849.mp4 with mode=doubles, shot_type=rally
+2026-02-08 21:48:54,765 - processing.engine - INFO - Opening video: uploads\7e180613-1301-43c7-b4eb-dc3e53317849.mp4
+2026-02-08 21:48:54,818 - processing.engine - INFO - Video props: 1920x1080 @ 30.0fps
+2026-02-08 21:48:54,873 - processing.engine - INFO - Output writer initialized: outputs\processed_7e180613-1301-43c7-b4eb-dc3e53317849.mp4
+2026-02-08 21:48:55,150 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 21:48:58,425 - processing.engine - INFO - Decision made at frame 22: {'decision': 'IN', 'point': (1615.4014892578125, 937.5617065429688), 'frame': 124}
+2026-02-08 21:50:43,220 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: IN
+2026-02-08 21:51:20,103 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-08 21:51:22,229 - processing.engine - INFO - Video processing finished. Total frames: 125
+2026-02-08 21:51:22,231 - __main__ - INFO - Processing complete for 7e180613-1301-43c7-b4eb-dc3e53317849.mp4
+2026-02-08 22:11:26,356 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-08 22:11:26,508 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-08 22:11:47,006 - __main__ - INFO - Starting processing for 5a24a6ee-1510-44d3-bbd1-239a82f1dffd.mp4 with mode=doubles, shot_type=rally
+2026-02-08 22:11:47,006 - processing.engine - INFO - Opening video: uploads\5a24a6ee-1510-44d3-bbd1-239a82f1dffd.mp4
+2026-02-08 22:11:47,062 - processing.engine - INFO - Video props: 1920x1080 @ 30.0fps
+2026-02-08 22:11:47,114 - processing.engine - INFO - Output writer initialized: outputs\processed_5a24a6ee-1510-44d3-bbd1-239a82f1dffd.mp4
+2026-02-08 22:11:47,632 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 22:12:07,261 - processing.engine - INFO - Decision made at frame 46: {'decision': 'IN', 'point': (1005.6214599609375, 710.65185546875), 'frame': 36}
+2026-02-08 22:13:37,281 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: IN
+2026-02-08 22:13:37,283 - processing.animation - INFO - DEBUG PROJECTION: Cam Pos: [  0.  12. -15.], Pitch: 45.0
+2026-02-08 22:13:37,283 - processing.animation - INFO - DEBUG PROJECTION: Court Vertices: [[-3.05, 0, -6.7], [3.05, 0, -6.7], [3.05, 0, 6.7], [-3.05, 0, 6.7]]
+2026-02-08 22:13:37,283 - processing.animation - INFO - DEBUG PROJECTION: Projected 2D: [(761, 710), (1158, 710), (1079, 270), (840, 270)]
+2026-02-08 22:14:16,388 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-08 22:14:18,766 - processing.engine - INFO - Video processing finished. Total frames: 125
+2026-02-08 22:14:18,767 - __main__ - INFO - Processing complete for 5a24a6ee-1510-44d3-bbd1-239a82f1dffd.mp4
+2026-02-08 22:23:04,796 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-08 22:23:04,937 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-08 22:23:39,048 - __main__ - INFO - Starting processing for 845702f4-2aa3-427b-b27b-f91fff948598.mp4 with mode=doubles, shot_type=rally
+2026-02-08 22:23:39,049 - processing.engine - INFO - Opening video: uploads\845702f4-2aa3-427b-b27b-f91fff948598.mp4
+2026-02-08 22:23:39,088 - processing.engine - INFO - Video props: 720x1280 @ 30.0fps
+2026-02-08 22:23:39,116 - processing.engine - INFO - Output writer initialized: outputs\processed_845702f4-2aa3-427b-b27b-f91fff948598.mp4
+2026-02-08 22:23:39,592 - processing.engine - INFO - Lines detected at frame 1
+2026-02-08 22:23:51,828 - processing.engine - INFO - Decision made at frame 42: {'decision': 'IN', 'point': (5.290709495544434, 787.3450927734375), 'frame': 42}
+2026-02-08 22:35:38,435 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: IN
+2026-02-08 22:35:38,438 - processing.animation - INFO - DEBUG PROJECTION: Cam Pos: [  0.  12. -15.], Pitch: 45.0
+2026-02-08 22:35:38,438 - processing.animation - INFO - DEBUG PROJECTION: Court Vertices: [[-3.05, 0, -6.7], [3.05, 0, -6.7], [3.05, 0, 6.7], [-3.05, 0, 6.7]]
+2026-02-08 22:35:38,438 - processing.animation - INFO - DEBUG PROJECTION: Projected 2D: [(124, 842), (595, 842), (501, 320), (218, 320)]
+2026-02-08 22:35:57,803 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-08 22:35:59,307 - processing.engine - INFO - Video processing finished. Total frames: 1108
+2026-02-08 22:35:59,308 - __main__ - INFO - Processing complete for 845702f4-2aa3-427b-b27b-f91fff948598.mp4
+2026-02-08 22:35:59,310 - asyncio - ERROR - Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dasan\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
