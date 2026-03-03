@@ -83,6 +83,12 @@ class DecisionEngine:
         # We allow it to be equal to neighbors (for "sticky" landings)
         # but it must be clearly lower (higher Y) than the start.
         
+        # PREVENT PREMATURE DETECTION: ensures the shuttle has hit the ground and we've observed 
+        # at least 2 frames AFTER the impact. If max_y is at the very end of history, it's still descending.
+        frames_after_peak = len(y_coords) - 1 - max_y_idx
+        if frames_after_peak < 2:
+            return None
+
         margin = 0.5
         is_peak = all(max_y >= y - margin for y in y_coords) # Relaxed peak check
         

@@ -579,3 +579,50 @@ Traceback (most recent call last):
     self._sock.shutdown(socket.SHUT_RDWR)
     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-02-28 12:31:48,024 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-28 12:31:48,245 - processing.engine - INFO - ProcessingEngine initialized.
+2026-02-28 12:46:16,057 - __main__ - INFO - Starting processing for 55c64bfb-911b-4b38-84c0-51820cb23070.mp4 with mode=singles, shot_type=rally
+2026-02-28 12:46:16,057 - processing.engine - INFO - Opening video: uploads\55c64bfb-911b-4b38-84c0-51820cb23070.mp4
+2026-02-28 12:46:16,570 - processing.engine - INFO - Video props: 1080x1920 @ 30.0fps
+2026-02-28 12:46:16,612 - processing.engine - INFO - Output writer initialized: outputs\processed_55c64bfb-911b-4b38-84c0-51820cb23070.mp4
+2026-02-28 12:46:17,274 - processing.engine - INFO - Lines detected at frame 1
+2026-02-28 12:46:19,664 - processing.engine - INFO - Decision made at frame 15: {'decision': 'OUT', 'point': (1039.618408203125, 1105.010498046875), 'frame': 15}
+2026-02-28 12:53:19,474 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: OUT
+2026-02-28 12:53:19,495 - processing.animation - INFO - DEBUG PROJECTION: Cam Pos: [  0.  12. -15.], Pitch: 45.0
+2026-02-28 12:53:19,496 - processing.animation - INFO - DEBUG PROJECTION: Court Vertices: [[-2.59, 0, -6.7], [2.59, 0, -6.7], [2.59, 0, 6.7], [-2.59, 0, 6.7]]
+2026-02-28 12:53:19,496 - processing.animation - INFO - DEBUG PROJECTION: Projected 2D: [(239, 1263), (840, 1263), (720, 481), (359, 481)]
+2026-02-28 12:53:47,551 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-28 12:53:50,563 - processing.engine - INFO - Video processing finished. Total frames: 478
+2026-02-28 12:53:50,566 - __main__ - INFO - Processing complete for 55c64bfb-911b-4b38-84c0-51820cb23070.mp4
+2026-02-28 12:53:50,636 - __main__ - INFO - Starting processing for 340791c8-eac8-484b-801d-cbd9661f1717.mp4 with mode=doubles, shot_type=rally
+2026-02-28 12:53:50,637 - processing.engine - INFO - Opening video: uploads\340791c8-eac8-484b-801d-cbd9661f1717.mp4
+2026-02-28 12:53:50,656 - processing.engine - INFO - Video props: 1080x1920 @ 30.0fps
+2026-02-28 12:53:50,680 - processing.engine - INFO - Output writer initialized: outputs\processed_340791c8-eac8-484b-801d-cbd9661f1717.mp4
+2026-02-28 12:53:50,876 - processing.engine - INFO - Lines detected at frame 1
+2026-02-28 12:53:56,551 - processing.engine - INFO - Decision made at frame 26: {'decision': 'OUT', 'point': (1039.618408203125, 1105.010498046875), 'frame': 15}
+2026-02-28 13:01:06,970 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: OUT
+2026-02-28 13:01:37,844 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-28 13:01:41,949 - processing.engine - INFO - Video processing finished. Total frames: 478
+2026-02-28 13:01:41,950 - __main__ - INFO - Processing complete for 340791c8-eac8-484b-801d-cbd9661f1717.mp4
+2026-02-28 13:05:43,630 - __main__ - INFO - Starting processing for 08cbde18-315d-4c4e-a634-9e060068d2e8.mp4 with mode=singles, shot_type=rally
+2026-02-28 13:05:43,631 - processing.engine - INFO - Opening video: uploads\08cbde18-315d-4c4e-a634-9e060068d2e8.mp4
+2026-02-28 13:05:43,654 - processing.engine - INFO - Video props: 1080x1920 @ 30.0fps
+2026-02-28 13:05:43,702 - processing.engine - INFO - Output writer initialized: outputs\processed_08cbde18-315d-4c4e-a634-9e060068d2e8.mp4
+2026-02-28 13:05:44,025 - processing.engine - INFO - Lines detected at frame 1
+2026-02-28 13:05:49,624 - processing.engine - INFO - Decision made at frame 26: {'decision': 'OUT', 'point': (1039.618408203125, 1105.010498046875), 'frame': 15}
+2026-02-28 13:12:32,267 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: OUT
+2026-02-28 13:12:59,196 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-28 13:13:02,131 - processing.engine - INFO - Video processing finished. Total frames: 478
+2026-02-28 13:13:02,132 - __main__ - INFO - Processing complete for 08cbde18-315d-4c4e-a634-9e060068d2e8.mp4
+2026-02-28 13:19:51,724 - __main__ - INFO - Starting processing for 0cbec772-30ce-42fc-bdf1-578d108510d5.mp4 with mode=singles, shot_type=rally
+2026-02-28 13:19:51,724 - processing.engine - INFO - Opening video: uploads\0cbec772-30ce-42fc-bdf1-578d108510d5.mp4
+2026-02-28 13:19:51,748 - processing.engine - INFO - Video props: 1080x1920 @ 30.0fps
+2026-02-28 13:19:51,777 - processing.engine - INFO - Output writer initialized: outputs\processed_0cbec772-30ce-42fc-bdf1-578d108510d5.mp4
+2026-02-28 13:19:52,083 - processing.engine - INFO - Lines detected at frame 1
+2026-02-28 13:19:57,243 - processing.engine - INFO - Decision made at frame 26: {'decision': 'OUT', 'point': (1039.618408203125, 1105.010498046875), 'frame': 15}
+2026-02-28 13:26:55,639 - processing.engine - INFO - Generating 3D Hawk-Eye replay for decision: OUT
+2026-02-28 13:27:23,318 - processing.engine - INFO - Animation generation complete. 120 frames added.
+2026-02-28 13:27:26,299 - processing.engine - INFO - Video processing finished. Total frames: 478
+2026-02-28 13:27:26,300 - __main__ - INFO - Processing complete for 0cbec772-30ce-42fc-bdf1-578d108510d5.mp4
+2026-02-28 14:11:52,920 - processing.engine - INFO - Initializing ProcessingEngine...
+2026-02-28 14:11:53,077 - processing.engine - INFO - ProcessingEngine initialized.
